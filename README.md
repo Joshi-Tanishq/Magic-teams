@@ -5,13 +5,21 @@ A fantasy cricket website allowing users to create virtual cricket teams, join l
 
 **Features:**
 User registration and authentication
+
 Team creation with player selection
+
 Player statistics and performance analysis
+
 League creation and participation
+
 Live score updates
+
 Leaderboards and rankings
+
 Admin panel for site management
+
 Technologies Used:
+
 HTML, CSS, JavaScript, Git
 
 **How to Run:**
