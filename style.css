@@ -1,0 +1,501 @@
+*{margin: 0; padding: 0;}
+
+.bgimg-1
+{
+    background-image: url(_0d8f9cff-1fc2-4fb9-8e2f-04244c65b22b.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container
+{
+    display: flex;
+}
+
+.profile
+{
+    display: none;
+    width: 100%;
+    
+}
+
+.pro
+{
+    height: 150px;
+    padding: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: aliceblue;
+    font-weight: 700;
+    font-family: rockwell;
+    position: relative;
+    background: linear-gradient(45deg, black, green);
+}
+
+.pro .balance
+{
+    position: absolute;
+    top: 145px;
+    background-color: aliceblue;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.736);
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pro-img
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.pro-img img
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.wrapper
+{
+    width: 100%;
+}
+
+.head
+{
+    background: linear-gradient(to right, #da1c1c, #8e1919, #740d0d, #400404);
+    padding: 2% 5%;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+
+
+.head #icon-bar
+{
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.head #gameTitle
+{
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 3px rgba(255,255,255,0.7);
+}
+
+.head-top-right
+{
+    font-size: 1.5rem;
+}
+
+.head-top-right a
+{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.matches
+{
+    margin-top: 10px;
+}
+
+.matches h3
+{
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.736);
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.IPL
+{
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.IPL::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.IPL .box
+{
+    flex: 0 0 auto;
+    height: 200px;
+    width: 70%;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    font-weight: 700;
+}
+
+.upcomingMatches
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 35px;
+}
+
+.upcomingMatches .box
+{
+    width: 90%;
+    height: 200px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+.upcomingMatches .box .heading h4
+{
+    background-color: rgb(153, 146, 146);
+    width: 70%;
+    padding: 10px;
+    border-radius: 0 95px 0 0;
+}
+
+.upcomingMatches .box .heading span
+{
+    color: rgb(24, 186, 24);
+}
+
+.upcomingMatches .box .mid
+{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+.upcomingMatches .box .bottom
+{
+    border-top: 2px solid rgba(0, 0, 0, 0.449);
+}
+
+.upcomingMatches .box .bottom h4
+{
+    color: rgb(188, 83, 51);
+    border-left: 1px solid rgb(188, 83, 51);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.footer
+{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+.footer a
+{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.449);
+    font-size: 1.5rem;
+    padding: 5px;
+    text-align: center;
+}
+
+.footer a h6
+{
+    font-size: small;
+    text-align: center;
+    font-weight: 200;
+}
+
+/* contest */
+
+.contests-top
+{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#backward
+{
+    font-size: 2rem;
+}
+
+.content-list
+{
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.content-list::-webkit-scrollbar
+{
+    display: none;
+}
+
+
+
+
+
+.content-list span
+{
+    padding: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: rgb(21, 19, 19);
+}
+
+
+
+.selected
+{
+    border-bottom: 2px solid orangered;
+}
+
+
+
+
+.contest-heading h2
+{
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+
+.content
+{
+    display: none;
+}
+
+.active
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.content .box
+{
+    width: 90%;
+    height: 150px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 5px solid rgba(0,0,0,0.3);
+}
+
+
+
+.content strong
+{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    text-transform: uppercase;
+    color: orangered;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.teamButtons
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.content #joinContest, .content #createTeam
+{
+    background: rgb(16, 125, 16);
+    padding: 10px;
+    font-size: medium;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.content #createTeam a
+{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.content #pastLineup
+{
+    background: transparent;
+    padding: 10px;
+    font-size: medium;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgb(11, 11, 11);
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.team
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team .createTeam
+{
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.756);
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    position: fixed;
+    bottom: 5vh;
+}
+
+.team .createTeam a
+{
+    color: aliceblue;
+    letter-spacing: 2px;
+    font-weight: 300;    
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.team .createTeam a #plusSign
+{
+    color: aliceblue;
+    padding: 5px;
+    border: 2px solid aliceblue;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* login */
+
+#login-start
+{
+    font-size: small;
+    text-align: center;
+}
+
+.login-form
+{
+    background: linear-gradient(to right, #da1c1c, #8e1919, #740d0d, #400404);  
+}
+
+.login-form form
+{
+    height: 92.5999vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.login-form form #mobNumber
+{
+    margin-top: 20px;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.756);
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.login-form form #mobNumber::placeholder
+{
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.terms-conditions
+{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.terms-conditions #terms
+{
+    width: 40px;
+}
+
+.login-form form button
+{
+    width: 75%;
+    padding: 10px;
+    background-color: rgba(220, 215, 215, 0.605);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+#declaration
+{
+    color: rgba(0, 0, 0, 0.756);
+}
+
+.other
+{
+    color: rgba(0, 0, 0, 0.856);
+}
+
+.other a
+{
+    color: rgba(0, 0, 0, 0.856);
+
+}
+
+
+
+
+

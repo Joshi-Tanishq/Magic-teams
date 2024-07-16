@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="head">
+        <span id="backward" onclick="goBack()"><i class="fa-solid fa-arrow-left-long"></i></span>
+        <div class="mid">
+            <h3>Login/Register</h3>
+            <span id="login-start">Let's get you started</span>
+        </div>
+        <div class="head-top-right">
+            <a href="#"><i class="fa-regular fa-circle-question"></i></a>
+        </div>
+    </div>
+    <div class="login-form">
+        <form action="">
+            <input type="number" name="" id="mobNumber" placeholder="Mobile number">
+            <div class="terms-conditions"><input type="checkbox" name="" id="terms"><span>I certify that i am above 18 years</span></div>
+            <button type="submit">continue</button>
+
+            <span id="declaration">By continuing, I agree to Magic Team's <strong>T&C.</strong></span>
+
+            <div class="other">
+            <a href="#">Have an Invite Code?</a>
+            <span>|</span>
+            <a href="#">Other login options</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    let goBack = () =>
+    {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

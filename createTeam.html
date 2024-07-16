@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateTeam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+
+        .top
+        {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .createTeamHead
+        {
+            background: #1b1b1b;
+            padding: 2% 5%;
+            color: aliceblue;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .createTeamHead-top
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .createHead-top-left
+        {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .createHead-top-left span
+        {
+            font-size: 1.3rem;
+        }
+
+        .createHead-top-right a
+        {
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 1.3rem;
+        }
+
+
+        .createTeamHead h5
+        {
+            text-align: center;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .createTeamHead-mid
+        {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #numberOfSelectedPlayers, #playersSelectedFromTeam1, #playersSelectedFromTeam2, #creditsLeft
+        {
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .selctedPlayers, .credits
+        {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+
+        .credits
+        {
+            align-items: flex-end;
+        }
+
+
+
+        .firstTeam, .secondTeam
+        {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .firstTeam img, .secondTeam img
+        {
+            height: 35px;
+            width: 35px;
+            border-radius: 5px;
+        }
+
+        .FT-p, .ST-p
+        {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .createTeamHead-bottom
+        {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .players-loader
+        {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5px;
+        }
+        .players-loader .boxes
+        {
+            background-color: aliceblue;
+            width: 25px;
+            height: 25px;
+            transform: skewX(-25deg);
+        }
+
+        .clearTeamButton
+        {
+            font-size: 1.5rem;
+        }
+
+        .report
+        {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            overflow-x: auto;
+            background: #333;
+        }
+
+        .report::-webkit-scrollbar
+        {
+            display: none;
+        }
+
+        .report h5
+        {
+            white-space: nowrap;
+            background: linear-gradient(to right, #da1c1c, #8e1919, #740d0d, #400404);
+            padding: 10px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border-right: 2px solid white;
+            border-top: 2px solid white;
+            border-radius: 0 20px 20px 0;
+            color: aliceblue;
+        }
+
+        .report span
+        {
+            white-space: nowrap;
+            padding: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #pitch, #bowling, #avgScore, #venue
+        {
+            color: aliceblue;
+            font-size: 17px;
+        }
+
+
+        .players-list
+        {
+            padding: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+
+
+
+
+
+        .players-list span
+        {
+            padding: 10px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            white-space: nowrap;
+            color: rgb(21, 19, 19);
+        }
+
+
+
+        .selected
+        {
+            border-bottom: 2px solid orangered;
+        }
+
+        .content
+        {
+            display: none;
+        }
+
+        .active
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .players{
+            height: 90px;
+            width: 100%;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+            letter-spacing: 2px;
+            color: aliceblue;
+            font-weight: 500;
+            text-shadow: 0 3px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="createTeamHead">
+            <div class="createTeamHead-top">
+                <div class="createHead-top-left">
+                    <span id="backward" onclick="goBack()"><i class="fa-solid fa-arrow-left-long"></i></span>
+                    <span>Create Team <span id="teamNumber">1</span></span>
+                </div>
+            <div class="createHead-top-right">
+                <a href="#"><i class="fa-regular fa-circle-question"></i></a>
+            </div>
+            </div>
+            <h5>Maximum of 10 players from one team</h5>
+            <div class="createTeamHead-mid">
+                <div class="selctedPlayers">
+                    <span>Players</span>
+                    <span><span id="numberOfSelectedPlayers">0</span>/11</span>
+                </div>
+                <div class="firstTeam">
+                    <img src="Dc.jpg" alt="f">
+                    <div class="FT-p">
+                        <span id="firstTeamName">DC</span>
+                        <span id="playersSelectedFromTeam1">0</span>
+                    </div>
+                </div>
+                <div class="secondTeam">
+                    <img src="srh.jpg" alt="s">
+                    <div class="ST-p">
+                        <span id="secondTeamName">SRH</span>
+                        <span id="playersSelectedFromTeam2">0</span>
+                    </div>
+                </div>
+                <div class="credits">
+                    <span>Credits Left</span>
+                    <span id="creditsLeft">100</span>
+                </div>
+            </div>
+            <div class="createTeamHead-bottom">
+                <div class="players-loader">
+                    <div id="box1" class="boxes"></div>
+                    <div id="box2" class="boxes"></div>
+                    <div id="box3" class="boxes"></div>
+                    <div id="box4" class="boxes"></div>
+                    <div id="box5" class="boxes"></div>
+                    <div id="box6" class="boxes"></div>
+                    <div id="box7" class="boxes"></div>
+                    <div id="box8" class="boxes"></div>
+                    <div id="box9" class="boxes"></div>
+                    <div id="box10" class="boxes"></div>
+                    <div id="box11" class="boxes"></div>
+                </div>
+                <div class="clearTeamButton">
+                    <span><i class="fa-solid fa-circle-minus"></i></span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="report">
+            <h5>Pitch Report <i class="fa-solid fa-angle-right"></i></h5>
+            <span>Pitch<span id="pitch">Batting</span>  |</span> 
+            <span>Good for<span id="bowling">Pace</span>  |</span> 
+            <span>Avg Score<span id="avgScore">179</span>  |</span> 
+            <span>Venue<span id="venue">Arun Jaitley Stadium, Delhi</span></span>
+        </div>
+        <div class="players-list">
+            <span onclick="selectMenuItem(this, 'content1')" class="selected">WK <strong id="num">(0)</strong></span>
+            <span onclick="selectMenuItem(this, 'content2')">BAT <strong id="num">(0)</strong></span>
+            <span onclick="selectMenuItem(this, 'content3')">AR <strong id="num">(0)</strong></span>
+            <span onclick="selectMenuItem(this, 'content4')">BOWL <strong id="num">(0)</strong></span>
+           </div>
+    </div>
+
+    <div id="content1" class="content active">
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>
+        <div class="players">
+            <strong>Wicket-Keepers</strong>
+        </div>        
+    </div>
+
+    <div id="content2" class="content">
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>
+        <div class="players">
+            <strong>Batters</strong>
+        </div>     
+    </div>
+
+    <div id="content3" class="content">
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>
+        <div class="players">
+            <strong>All Rounders</strong>
+        </div>     
+    </div>
+
+    <div id="content4" class="content">
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>
+        <div class="players">
+            <strong>Bowlers</strong>
+        </div>     
+    </div>
+
+    
+
+
+    <script src="createTeam.js"></script>
+</body>
+</html>
